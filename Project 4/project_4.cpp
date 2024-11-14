@@ -1,4 +1,4 @@
-// #include <./p_4_header.hpp>
+#include "p_4_header.hpp"
 #include <iostream>
 
 std::size_t length( char const *a ){
@@ -44,7 +44,7 @@ unsigned int distance( char const *str1, char const *str2 ){
 std::size_t is_sorted( char *array[], std::size_t capacity ){
     if (capacity == 0) return 0;
     for (int i{0};i<capacity - 1;++i){
-        if (array[i + 1] < array[i]){
+        if (compare(array[i], array[i + 1]) > 0){
             return i + 1;
         }
     }
@@ -76,10 +76,10 @@ int main(){
 
 
     //5. is_sorted test
-    int cap{5};
-    char str[cap] {"abc"};
-    char * pstr {&str};
-    std::cout << is_sorted(pstr, cap);
+    // char* sortedArray[] = {(char*)"banana"};
+    // std::size_t result = is_sorted(sortedArray, 1);
+    // std::cout << result;
+    // assert(result == 3); // Expect capacity since the array is sorted
 
     
 
